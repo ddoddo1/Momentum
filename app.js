@@ -5,6 +5,8 @@ const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username"
 
+const seavdUsername = localStorage.getItem(USERNAME_KEY);
+
 function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
@@ -15,14 +17,11 @@ function onLoginSubmit(event) {
 
 
 function paintGreeting(username) {
-    greeting.innerText = `hello ${seavdUsername}`;
+    greeting.innerText = `hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 
 }
 
-
- 
-const seavdUsername = localStorage.getItem(USERNAME_KEY);
 
 if(seavdUsername === null){
     loginForm.classList.remove(HIDDEN_CLASSNAME);
